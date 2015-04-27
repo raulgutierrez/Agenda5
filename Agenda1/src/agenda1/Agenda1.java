@@ -69,9 +69,112 @@ public class Agenda1 extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        dlgAdd = new javax.swing.JDialog();
+        jLabel1 = new javax.swing.JLabel();
+        txfNombre = new javax.swing.JTextField();
+        jLabel2 = new javax.swing.JLabel();
+        txfDireccion = new javax.swing.JTextField();
+        jLabel3 = new javax.swing.JLabel();
+        txfTelefono = new javax.swing.JTextField();
+        btnAddEntrada = new javax.swing.JButton();
+        btnCancelar = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
         lista = new javax.swing.JList();
         btnVer = new javax.swing.JButton();
+        btnAdd = new javax.swing.JButton();
+
+        dlgAdd.setTitle("Añadir entrada");
+        dlgAdd.setMinimumSize(new java.awt.Dimension(400, 350));
+        dlgAdd.setModal(true);
+
+        jLabel1.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        jLabel1.setText("Nombre");
+
+        txfNombre.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        txfNombre.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                txfNombreseleccionarTextoNombre(evt);
+            }
+        });
+
+        jLabel2.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        jLabel2.setText("Dirección");
+
+        txfDireccion.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+
+        jLabel3.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        jLabel3.setText("Teléfono");
+
+        txfTelefono.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+
+        btnAddEntrada.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        btnAddEntrada.setText("Añadir");
+        btnAddEntrada.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnAddEntradaaddEntrada(evt);
+            }
+        });
+
+        btnCancelar.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        btnCancelar.setText("Cancelar");
+        btnCancelar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnCancelarcancelarAdd(evt);
+            }
+        });
+
+        javax.swing.GroupLayout dlgAddLayout = new javax.swing.GroupLayout(dlgAdd.getContentPane());
+        dlgAdd.getContentPane().setLayout(dlgAddLayout);
+        dlgAddLayout.setHorizontalGroup(
+            dlgAddLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(dlgAddLayout.createSequentialGroup()
+                .addGroup(dlgAddLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(dlgAddLayout.createSequentialGroup()
+                        .addGap(18, 18, 18)
+                        .addGroup(dlgAddLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(dlgAddLayout.createSequentialGroup()
+                                .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 81, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(45, 45, 45))
+                            .addGroup(dlgAddLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                .addGroup(dlgAddLayout.createSequentialGroup()
+                                    .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addGap(35, 35, 35))
+                                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, dlgAddLayout.createSequentialGroup()
+                                    .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 108, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addGap(18, 18, 18))))
+                        .addGroup(dlgAddLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(txfTelefono)
+                            .addComponent(txfNombre)
+                            .addComponent(txfDireccion, javax.swing.GroupLayout.DEFAULT_SIZE, 246, Short.MAX_VALUE)))
+                    .addGroup(dlgAddLayout.createSequentialGroup()
+                        .addGap(29, 29, 29)
+                        .addComponent(btnAddEntrada, javax.swing.GroupLayout.PREFERRED_SIZE, 133, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(33, 33, 33)
+                        .addComponent(btnCancelar, javax.swing.GroupLayout.PREFERRED_SIZE, 133, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(0, 0, Short.MAX_VALUE)))
+                .addContainerGap())
+        );
+        dlgAddLayout.setVerticalGroup(
+            dlgAddLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(dlgAddLayout.createSequentialGroup()
+                .addGap(44, 44, 44)
+                .addGroup(dlgAddLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txfNombre, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(dlgAddLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txfDireccion, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(dlgAddLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txfTelefono, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(29, 29, 29)
+                .addGroup(dlgAddLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btnAddEntrada, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnCancelar, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(38, Short.MAX_VALUE))
+        );
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Agenda");
@@ -89,6 +192,14 @@ public class Agenda1 extends javax.swing.JFrame {
             }
         });
 
+        btnAdd.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        btnAdd.setText("Añadir");
+        btnAdd.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnAddverAddEntrada(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -97,7 +208,9 @@ public class Agenda1 extends javax.swing.JFrame {
                 .addGap(25, 25, 25)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 181, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 28, Short.MAX_VALUE)
-                .addComponent(btnVer, javax.swing.GroupLayout.PREFERRED_SIZE, 108, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(btnVer, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 108, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnAdd, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 108, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(58, 58, 58))
         );
         layout.setVerticalGroup(
@@ -107,7 +220,9 @@ public class Agenda1 extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
                         .addGap(7, 7, 7)
-                        .addComponent(btnVer, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(btnVer, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(btnAdd, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 252, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(24, Short.MAX_VALUE))
         );
@@ -123,7 +238,58 @@ public class Agenda1 extends javax.swing.JFrame {
         JOptionPane.showMessageDialog(this, datos, "Ver entrada", JOptionPane.INFORMATION_MESSAGE);
     }//GEN-LAST:event_verEntrada
 
-    
+    private void txfNombreseleccionarTextoNombre(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txfNombreseleccionarTextoNombre
+        txfNombre.selectAll();
+    }//GEN-LAST:event_txfNombreseleccionarTextoNombre
+
+    private void btnAddEntradaaddEntrada(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAddEntradaaddEntrada
+        String nombre = txfNombre.getText();
+        String direccion = txfDireccion.getText();
+        String telefono = txfTelefono.getText();
+        int iTelefono = 0;
+        boolean error = false;
+        if (nombre.trim().equals("")) {
+            JOptionPane.showMessageDialog(this, "El campo nombre no puede estar vacío", "Error nombre", JOptionPane.ERROR_MESSAGE);
+            error = true;
+        } else if (direccion.trim().equals("")) {
+            JOptionPane.showMessageDialog(this, "El campo dirección no puede estar vacío", "Error dirección", JOptionPane.ERROR_MESSAGE);
+            error = true;
+        } else if (telefono.trim().equals("")) {
+            JOptionPane.showMessageDialog(this, "El campo teléfono no puede estar vacío", "Error teléfono", JOptionPane.ERROR_MESSAGE);
+            error = true;
+        } else {
+            try {
+                iTelefono = Integer.parseInt(telefono);
+            } catch (NumberFormatException ex) {
+                JOptionPane.showMessageDialog(this, "El campo teléfono tiene que ser numérico", "Error teléfono", JOptionPane.ERROR_MESSAGE);
+                error = true;
+            }
+        }
+        if (error == false) {
+            Entrada e = new Entrada(nombre, direccion, iTelefono);
+            int indice = modeloLista.indexOf(e);
+            if (indice == -1) {
+                modeloLista.addElement(e);
+                limpiarAdd();
+            }
+        }
+    }//GEN-LAST:event_btnAddEntradaaddEntrada
+
+    private void btnCancelarcancelarAdd(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCancelarcancelarAdd
+        dlgAdd.setVisible(false);
+        limpiarAdd();
+    }//GEN-LAST:event_btnCancelarcancelarAdd
+
+    private void btnAddverAddEntrada(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAddverAddEntrada
+        dlgAdd.setVisible(true);
+    }//GEN-LAST:event_btnAddverAddEntrada
+
+    private void limpiarAdd() {
+        txfNombre.setText("");
+        txfDireccion.setText("");
+        txfTelefono.setText("");
+        txfNombre.requestFocus();
+    }
 
     /**
      * @param args the command line arguments
@@ -161,9 +327,19 @@ public class Agenda1 extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnAdd;
+    private javax.swing.JButton btnAddEntrada;
+    private javax.swing.JButton btnCancelar;
     private javax.swing.JButton btnVer;
+    private javax.swing.JDialog dlgAdd;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JList lista;
+    private javax.swing.JTextField txfDireccion;
+    private javax.swing.JTextField txfNombre;
+    private javax.swing.JTextField txfTelefono;
     // End of variables declaration//GEN-END:variables
     private DefaultListModel modeloLista;
 
