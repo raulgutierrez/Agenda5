@@ -82,6 +82,7 @@ public class Agenda1 extends javax.swing.JFrame {
         lista = new javax.swing.JList();
         btnVer = new javax.swing.JButton();
         btnAdd = new javax.swing.JButton();
+        btnBorrar = new javax.swing.JButton();
 
         dlgAdd.setTitle("Añadir entrada");
         dlgAdd.setMinimumSize(new java.awt.Dimension(400, 350));
@@ -200,6 +201,14 @@ public class Agenda1 extends javax.swing.JFrame {
             }
         });
 
+        btnBorrar.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        btnBorrar.setText("Borrar");
+        btnBorrar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnBorrarborrarEntrada(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -210,7 +219,8 @@ public class Agenda1 extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 28, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(btnVer, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 108, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnAdd, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 108, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(btnAdd, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 108, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnBorrar, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 108, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(58, 58, 58))
         );
         layout.setVerticalGroup(
@@ -222,7 +232,9 @@ public class Agenda1 extends javax.swing.JFrame {
                         .addGap(7, 7, 7)
                         .addComponent(btnVer, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(btnAdd, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(btnAdd, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(btnBorrar, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 252, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(24, Short.MAX_VALUE))
         );
@@ -284,6 +296,21 @@ public class Agenda1 extends javax.swing.JFrame {
         dlgAdd.setVisible(true);
     }//GEN-LAST:event_btnAddverAddEntrada
 
+    private void btnBorrarborrarEntrada(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBorrarborrarEntrada
+        Entrada e = (Entrada) lista.getSelectedValue();
+        if (e != null) {
+            final int SI = 0;
+            String datos = "¿Desea borrar la siguiente entrada?\n";
+            datos = datos + "Nombre   =" + e.getNombre() + "\n";
+            datos = datos + "Direccion=" + e.getDireccion() + "\n";
+            datos = datos + "Teléfono =" + e.getTelefono() + "\n";
+            int sino = JOptionPane.showConfirmDialog(this, datos, "Confirmar borrado", JOptionPane.YES_NO_OPTION);
+            if (sino == SI) {
+                modeloLista.removeElement(e);
+            }
+        }
+    }//GEN-LAST:event_btnBorrarborrarEntrada
+
     private void limpiarAdd() {
         txfNombre.setText("");
         txfDireccion.setText("");
@@ -329,6 +356,7 @@ public class Agenda1 extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnAdd;
     private javax.swing.JButton btnAddEntrada;
+    private javax.swing.JButton btnBorrar;
     private javax.swing.JButton btnCancelar;
     private javax.swing.JButton btnVer;
     private javax.swing.JDialog dlgAdd;
